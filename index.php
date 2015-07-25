@@ -1,34 +1,12 @@
 <?php
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-
-//include ("lib/phpQuery/phpQuery/phpQuery.php");
-//include ("lib/nokogiri.php");
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
 
 include_once ("urls.inc.php");
       
-/*
-function getPageContent($url, $agent = false)
-{
-   $contentPage = '';
-   $ch = curl_init();
-   curl_setopt($ch, CURLOPT_HEADER, 0);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-   curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-   curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)");
-   curl_setopt($ch, CURLOPT_URL, $url);
-   $contentPage = curl_exec($ch);
-   curl_close($ch);
-   return trim($contentPage);
-}
-*/
-
 function parse ($path, $url){
-
-// $path = "images/europe/ukraine";    
-// $url = "http://molotok.ru/evropa-ukraina-124465";
 
 @header ("Content-Type: text/html; charset=UTF-8");
 $html = file_get_contents($url);
@@ -100,7 +78,6 @@ for ($i = 1; $i <= $totalpages; $i++){
         copy($img_url,$path.$title.".jpg");
         
     }
-
      
 }
 
